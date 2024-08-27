@@ -257,8 +257,9 @@ class Ran:
             args += ["--phy-test"]
         if self.args.rfsim > 0:
             args += ["--rfsim"]
+            args += ['--rfsimulator.serveraddr 127.0.0.1']
         else:
-            f'-A {self.conf["timing_advance"]}'
+            args += [f'-A {self.conf["timing_advance"]}']
 
         executable = main_exe
         if self.prb >= 106 and self.numerology == 1:
